@@ -17,3 +17,14 @@ exports.get_data = async (req,res) => {
         data
     })
 }
+
+exports.delete_data = async (req,res) => {
+    
+    var id = req.params.id;
+
+    var data = await user.findByIdAndDelete(id);
+
+    res.status(200).json({
+        status:"delete data"
+    })
+}
